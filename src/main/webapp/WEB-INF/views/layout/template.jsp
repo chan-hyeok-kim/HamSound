@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css">
    
+<script src="/js/jquery-3.3.1.min.js"></script>
    
 </head>
 <body>
@@ -32,7 +33,6 @@
 
 
 
-<script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/player.js"></script>
 <script src="/js/jquery.nice-select.min.js"></script>

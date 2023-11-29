@@ -9,6 +9,11 @@
 </head>
 <body>
 
+<button type="button" class="btn btn-light" id="source-list-btn">
+음원 불러오기
+</button>
 
+<script src="/js/sound/list.js">
+</script>
 </body>
 </html>

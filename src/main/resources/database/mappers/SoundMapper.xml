@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.ham.gov.soundresource.SoundResourceDAO">
+
+<select id="getList">
+
+</select>
+
+
+<insert id="setAdd" parameterType="com.ham.gov.soundsource.SoundSourceVO">
+      INSERT INTO SOUND_SOURCE
+      (SOUND_SOURCE_NO, SOUND_SOURCE_PATH, SOUND_SOURCE_NAME, SOUND_SOURCE_ORI_NAME, 
+      REG_ID,REG_DATE,REG_MENU,MOD_ID,MOD_DATE,MOD_MENU)
+		VALUES
+	  (#{soundSourceNo},#{soundSourcePath},#{soundSourceName},#{soundSourceOriName},#{regId},NOW(),#{regMenu},#{modId},NOW(),#{modMenu})
+      
+</insert>
+
+<!-- insert
+
+INSERT INTO 
+(REG_ID,REG_DATE,REG_MENU,MOD_ID,MOD_DATE,MOD_MENU)
+VALUES
+(  ,#{regId},NOW(),#{regMenu},#{modId},NOW(),#{modMenu})
+
+ -->
+ 
+ 
+ <!-- update
+ 
+ UPDATE 
+    SET
+		,MOD_ID=#{modId},MOD_DATE=NOW(),MOD_MENU=#{modMenu}
+		WHERE 
+ 
+  -->
+  
+  <!-- resultMap
+        <result column="REG_ID" property="regId"/>
+		<result column="REG_DATE" property="regDate"/>
+		<result column="REG_MENU" property="regMenu"/>
+		<result column="MOD_ID" property="modId"/>
+		<result column="MOD_DATE" property="modDate"/>
+		<result column="MOD_MENU" property="modMenu"/>
+		<result column="CODE" property="code"/>
+		<result column="UP_CODE" property="upCode"/>
+		<result column="CODE_NAME" property="codeName"/>
+   -->
+</mapper>

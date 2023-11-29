@@ -6,7 +6,7 @@
   
 <configuration>
  <typeAliases>
- 
+<!--   <typeAlias type="com.ham.gov.soundsource.SoundSourceVO" alias="SoundSourceVO"/> -->
  
  
  
