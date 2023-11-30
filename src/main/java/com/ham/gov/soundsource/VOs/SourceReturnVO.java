@@ -1,4 +1,4 @@
-package com.ham.gov.soundsource;
+package com.ham.gov.soundsource.VOs;
 
 import java.util.List;
 
@@ -9,8 +9,10 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class SourceTotalVO {
+public class SourceReturnVO {
 
+	private String count;
+	private String next;
 	private List<Object> results;
-	private String more;
+	private String previous;
 }
