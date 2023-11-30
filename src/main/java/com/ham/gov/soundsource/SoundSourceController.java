@@ -1,5 +1,6 @@
 package com.ham.gov.soundsource;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +15,15 @@ import reactor.core.publisher.Flux;
 @Slf4j
 public class SoundSourceController {
 
+	@Value("${data.api.key}")
+	private String apiKey;
+	
 	@GetMapping("ajaxList")
 	public Flux<SourceReturnVO> getAjaxList()throws Exception{
-	  WebClient webClient=WebClient.create("https://freesound.org/apiv2/search/text/?token=LCjBGOAzzz3wneghuXVlHJryG8Pf0cwGxJhZagZY");
+		
+		
+		
+	  WebClient webClient=WebClient.create("https://freesound.org/apiv2/search/text/?token="+apiKey);
 	    
 	    Flux<SourceReturnVO> results=webClient.get()
 	             .uri("")

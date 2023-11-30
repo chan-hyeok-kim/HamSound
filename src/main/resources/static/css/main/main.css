@@ -1,0 +1,25 @@
+.card-list{
+    display: flex;
+    /* overflow-x: auto; */
+    scroll-snap-type: x mandatory;
+}
+ .card{
+     min-width: 350px;
+     scroll-snap-align: center;
+     background: black;
+     min-height: 10rem;
+}
+
+.card:hover{
+    transform: translateY(-.5rem);
+     
+}
+.card:hover ~ .card{
+    transform: translateX(1rem);
+    
+}
+
+.card:not(:first-child){
+    margin-left: -130px;
+}
+
