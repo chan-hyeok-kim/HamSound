@@ -26,24 +26,8 @@ public class HomeController {
 		
 		log.warn("루트 가는지 확인");
 		
-	     //음원 정보
-		 WebClient webClient=WebClient.create("https://freesound.org/apiv2/search/text/?token="+apiKey);
-		    
-		    Flux<SourceReturnVO> results=webClient.get()
-		             .uri("")
-		             .retrieve()
-		             .bodyToFlux(SourceReturnVO.class);
-			
-		    log.warn("음원 오는지 확인 {}",results);
-		    
-		    model.addAttribute("list", results);
-		    
-		    //음원 파일
-		    WebClient getSourceClient= WebClient.create("https://freesound.org/apiv2/search/content/?token="+apiKey);
-		    
-		 
-		    
-		    
+	  
+	    
 		return "index";
 	}
 	

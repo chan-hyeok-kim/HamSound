@@ -3,6 +3,7 @@ package com.ham.gov.soundsource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -32,7 +33,27 @@ public class SoundSourceController {
 		
 	    log.warn("음원 오는지 확인 {}",results);
 	    
+
 		return results;
 	}
 	
+	@GetMapping("sourceList")
+	public Flux<SourceReturnVO> getSourceList()throws Exception{
+		  //음원 파일
+	    WebClient getSourceClient= WebClient.create("https://freesound.org/apiv2/search/content/?target=1234&token="+apiKey);
+	    
+		  Flux<SourceReturnVO> sourceList=getSourceClient.get()
+		                  .uri("")
+		                  .retrieve()
+		                  .bodyToFlux(SourceReturnVO.class);
+		    
+		  log.warn("음원파일정보{}",sourceList);
+		  
+	    return sourceList;
+	}		
+	
+	@PostMapping("sourceDown")
+	public void getDown() throws Exception{
+		
+	}
 }

@@ -6,7 +6,7 @@
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="./index">
-                            <img src="/img/logo.png" alt="">
+                            <img src="/img/free-icon-headset-4405747.png" alt="">
                         </a>
                     </div>
                 </div>
