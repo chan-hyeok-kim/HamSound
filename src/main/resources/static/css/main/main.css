@@ -1,6 +1,6 @@
-.card-list{
+/* .card-list{
     display: flex;
-    /* overflow-x: auto; */
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
 }
  .card{
@@ -22,4 +22,4 @@
 .card:not(:first-child){
     margin-left: -130px;
 }
-
+ */
