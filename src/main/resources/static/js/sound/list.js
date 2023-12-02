@@ -8,7 +8,7 @@ const cardAudio=document.getElementsByClassName('card-audio');
 var soundObj;
 var soundArr=new Array();
 var soundArrCal=new Array();
-var a=[];
+
 
     $.ajax({
         url:'/sound/ajaxList',
@@ -22,8 +22,8 @@ var a=[];
                
            
                 soundArr.push(Object.values(soundObj)[1]);
+                let a = { source: Object.values(soundObj)[1] };
                 
-                a.source=Object.values(soundObj)[1];
                 soundArrCal.push(a); 
                 
 
@@ -38,11 +38,22 @@ var a=[];
                 }
 
               
+				const calamansiElements = document.querySelectorAll('.card-audio');
+							    
+							    calamansiElements.forEach((element,index) => {
+							        new Calamansi(element, {
+							            skin: '/calamansi-js-master/dist/skins/calamansi-compact',
+							            playlists: {
+							                'Classics': [soundArrCal[index]],
+							            },
+							        });
+							    });
 
                     
                 
                }
 
+          /*    for(let i=0; i<cardAudio.length; i++){
 				  new Calamansi(document.querySelector('.card-audio'), {
 				            skin: '/calamansi-js-master/dist/skins/calamansi',
 				            playlists: {
@@ -53,7 +64,9 @@ var a=[];
 				
 				        Calamansi.autoload();
             
-               
+               }*/
+
+			 
                
         },error:function(){
            
